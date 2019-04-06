@@ -22,7 +22,7 @@ from books.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^/$', show_home),
+    url(r'^$', show_home),
     url(r'^api/books/$', show_books),
     url(r'^api/update/$', update_book),
     url(r'^api/delete/$', delete_book),
