@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books</title>
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="/static/js/home.js"></script>
+</head>
+<body>
+<div class="row">
+    <div id="header">
+        <h2>My Book Store</h2>
+    </div>
+    <div class="col l6 offset-l1">
+        <input id="search" type="text" placeholder="Enter The name of the book">
+    </div>
+    <div class="col l1" style="margin-top: 115px;">
+        <a class="waves-effect waves-light btn blue" onclick="search_book()">Search</a>
+    </div>
+    <div class="col s12 m12 l12" id="books_data" style="margin-top: 10px;">
+
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<div id="edit_modal" class="modal"
+     style="height: auto">
+    <div class="modal-content no-padding">
+        <div class="row" style="margin: 0">
+            <div class="col s12 m12 l12" style="padding: 0">
+                <div class="card-panel blue z-depth-0 center white-text" style="margin: 0;padding: 1px">
+                    <div class="card-title">
+                        <h5>UPDATE BOOK IN INVENTORY</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input type="text" hidden id="book_id">
+        <label for="book_name" style="margin-left: 2em;">Book Name</label>
+        <input type="text" style="width:60%; padding-top:10px;" id="book_name" readonly><br>
+        <label for="book_count" style="margin-left: 2em;">Inventory</label>
+        <input type="number" style="width:60%; padding-top:10px; margin-left: 2em;" id="book_count">
+    </div>
+    <div class="modal-footer">
+        <a class="btn blue modal-action modal-close waves-effect waves-green btn-flat" onclick="confirm_edit()">
+            Confirm
+        </a>
+    </div>
+</div>
+<div id="delete_modal" class="modal" style="height: auto">
+    <div class="modal-content no-padding">
+        <div class="row" style="margin: 0">
+            <div class="col s12 m12 l12" style="padding: 0">
+                <div class="card-panel blue z-depth-0 center white-text" style="margin: 0;padding: 1px">
+                    <div class="card-title">
+                        <h5>DELETE BOOK FROM INVENTORY</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input type="text" hidden id="book_id_del">
+      <p style="margin-left: 2em;">Are you sure you want to delete the book?</p>
+    </div>
+    <div class="modal-footer">
+        <a class="btn blue modal-action modal-close waves-effect waves-green btn-flat" onclick="confirm_delete()">
+            Delete
+        </a>
+    </div>
+  </div>
+
+<div id="add_modal" class="modal"
+     style="height: auto">
+    <div class="modal-content no-padding">
+        <div class="row" style="margin: 0">
+            <div class="col s12 m12 l12" style="padding: 0">
+                <div class="card-panel blue z-depth-0 center white-text" style="margin: 0;padding: 1px">
+                    <div class="card-title">
+                        <h5>ADD BOOK TO INVENTORY</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input type="text" hidden id="add_book_id">
+        <label for="add_book_name" style="margin-left: 2em;">Book Name</label>
+        <input type="text" style="width:60%; padding-top:10px;" id="add_book_name" readonly><br>
+        <label for="add_book_count" style="margin-left: 2em;">Inventory</label>
+        <input type="number" style="width:60%; padding-top:10px; margin-left: 2em;" id="add_book_count">
+    </div>
+    <div class="modal-footer">
+        <a class="btn blue modal-action modal-close waves-effect waves-green btn-flat" onclick="confirm_add()">
+            Confirm
+        </a>
+    </div>
+</div>
+</body>
+</html>
