@@ -1,1 +1,1 @@
-web: gunicorn spoonshot.wsgi.application --log-file -
+web: python manage.py runserver $PORT
