@@ -25,7 +25,7 @@ SECRET_KEY = ')e(k=)8az9%==dt8ys0wwow47of$9&=i3i#00833i5b)t@peyk'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['merabookstore.herokuapp.com']
 
 
 # Application definition
